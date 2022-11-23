@@ -87,7 +87,6 @@ def gen_puzzle():
       assert len(line) == 80
       puzzle.append(line + "\tGARBAGE")
       
-  import pdb; pdb.set_trace()
   # print puzzle
   for line in puzzle:
     print(line)
@@ -103,11 +102,6 @@ def test_encoded_line(line):
   counts = Counter(line)
   return counts["/"] + counts["\\"] == 31
   
-  
-num_lines = 100                                                                                                                                                                                                
-for l in range(num_lines):                                                                                                                                                                                     
-    line = ""                                                                                                                                                                                                   
-    for char in range(80):                                                                                                                                                                                      
-        line += random.choice(snake_chars)                                                                                                                                                                       
-    print(line) 
-    
+
+if __name__ == "__main__":
+     gen_puzzle()
