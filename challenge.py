@@ -18,8 +18,8 @@ from collections import Counter
 import random
 
 snake_chars = ['|', 'I', 'l', '1', '\\', '/']
-encoded_lat = "N 38 43.249" # Just for testing... not valid! Good thought looking
-encoded_lon = "W 77 22.592" # At old commits though!
+encoded_lat = "N 38 12.345" # Just for testing... not valid! Good thought looking
+encoded_lon = "W 77 56.789" # At old commits though!
 
 def encoded_line_marker(line_length=80):
   num_fwd_slashes = random.randint(1,31)
@@ -62,18 +62,21 @@ def gen_puzzle():
           break
       assert not test_encoded_line(line)
       assert len(line) == 80
-      puzzle.append(line + "\tGARBAGE")
+      #puzzle.append(line + "\tGARBAGE")
+      puzzle.append(line)
       
     # put an encoding line
     line = encoded_line_marker()
     assert test_encoded_line(line)
     assert len(line) == 80
-    puzzle.append(line + "\tMARKER")
+    #puzzle.append(line + "\tMARKER")
+    puzzle.append(line)
     
     line = encode_line(num)
     assert not test_encoded_line(line)
     assert len(line) == 80
-    puzzle.append(line  + f"\tENCODED: {num}")
+    #puzzle.append(line  + f"\tENCODED: {num}")
+    puzzle.append(line)
     
     # postpend some garbage
     for postpend_line in range(0, random.randint(0,10)):
@@ -85,7 +88,8 @@ def gen_puzzle():
           break
       assert not test_encoded_line(line)
       assert len(line) == 80
-      puzzle.append(line + "\tGARBAGE")
+      #puzzle.append(line + "\tGARBAGE")
+      puzzle.append(line)
       
   # print puzzle
   for line in puzzle:
