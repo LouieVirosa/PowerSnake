@@ -13,9 +13,9 @@ Simply modify the variables  `encoded_lat` and  `encoded_lon`. The program will 
 
 When you are ready to generate, type:
 
-'''bash
+```bash
 python3 ./challenge.py
-'''
+```
 
 And your POWERSNAKE puzzle will be generated!
 
